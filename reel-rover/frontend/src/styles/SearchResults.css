@@ -1,0 +1,27 @@
+/* components/SearchResults.css */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.result-card {
+  background: #1e1e1e;
+  color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+.result-card:hover {
+  transform: scale(1.05);
+}
+
+.result-image {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #444;
+}

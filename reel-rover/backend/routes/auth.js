@@ -11,7 +11,7 @@ dotenv.config();
 const authRouter = express.Router();
 
 
-const JWT_SECRET = import.meta.env.VITE_JWT_SECRET || 'your_jwt_secret_key';
+const JWT_SECRET = process.env.VITE_JWT_SECRET || 'your_jwt_secret_key';
 
 // --- Registration Route (POST /register) ---
 authRouter.post('/register', async (req, res) => {
@@ -43,7 +43,7 @@ authRouter.post('/register', async (req, res) => {
       },
     });
 
-    res.status(201).json({ message: 'User registered successfully', userId: newUser.id });
+    res.status(201).json({ message: 'User registered successfully', token, userId: newUser.id });
   } catch (err) {
     console.error('Error during registration:', err);
     res.status(500).json({ error: 'Internal server error' });

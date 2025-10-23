@@ -12,7 +12,7 @@ import historyRouter from './routes/history.js';
 dotenv.config();
 
 const app = express();
-const port = import.meta.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret_key';
 
 // Middleware
@@ -70,7 +70,7 @@ const startServer = async () => {
 
     } catch (err) {
         console.error('❌ FATAL ERROR: Server failed to start due to database connection issue.', err.message);
-        throw err;
+        process.exit(1); 
     }
 };
 

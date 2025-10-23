@@ -11,7 +11,7 @@ const testPrismaConnection = async () => {
         console.log('✅ Database connection (Prisma) successful');
     } catch (err) {
         console.error('❌ Database connection error (Prisma):', err);
-        throw err;
+        process.exit(1); 
     }
 };
 
